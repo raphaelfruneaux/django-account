@@ -1,0 +1,55 @@
+{% load i18n staticfiles %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Application{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//oss.maxcdn.com/semantic-ui/2.0.8/semantic.min.js"></script>
+
+    {% block content_css %}{% endblock %}
+    {% block content_js %}{% endblock %}
+
+</head>
+<body>
+
+{% block content_header %}
+    <div class="ui attached stackable menu">
+        <div class="ui container">
+            <a class="item">
+                <i class="home icon"></i> Home
+            </a>
+            <a class="item">
+                <i class="grid layout icon"></i> Browse
+            </a>
+            <a class="item">
+                <i class="mail icon"></i> Messages
+            </a>
+            <div class="ui simple dropdown item">
+                More
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item"><i class="edit icon"></i> Edit Profile</a>
+                    <a class="item"><i class="globe icon"></i> Choose Language</a>
+                    <a class="item"><i class="settings icon"></i> Account Settings</a>
+                </div>
+            </div>
+            <div class="right item">
+                <div class="ui input"><input type="text" placeholder="Search..."></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content_body %}{% endblock %}
+
+{% block content_footer %}{% endblock %}
+
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+
+</body>
+</html>

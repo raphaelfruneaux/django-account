@@ -1,0 +1,17 @@
+{% extends "t_layout.html" %}
+
+{% load i18n %}
+
+{% block content_body %}
+    <h1>{% trans "Hello" %}</h1>
+
+    {% if latest_question_list %}
+        <ul>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+{% endblock %}

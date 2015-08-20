@@ -1,0 +1,5 @@
+.idea/
+*.box
+*.sqlite3.idea/
+.vagrant/
+*.pyc
